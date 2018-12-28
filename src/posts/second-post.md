@@ -2,7 +2,7 @@
 slug: "/second-post"
 title: "Second Sample Markdown Post"
 date: "2018-12-28"
-categories: ["Learning"]
+category: "Learning"
 ---
 
 # Hammock Raw Denim Wayfarers

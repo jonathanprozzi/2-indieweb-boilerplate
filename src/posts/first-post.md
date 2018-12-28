@@ -2,7 +2,7 @@
 slug: "/first-post"
 title: "First Sample Markdown Post"
 date: "2018-12-27"
-categories: ["Learning"]
+category: "Learning"
 ---
 
 # Chartreuse: The Bespoke Chic Mixtape

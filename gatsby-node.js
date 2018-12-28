@@ -10,6 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               frontmatter {
                 slug
+                category
               }
             }
           }
@@ -18,8 +19,12 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(results => {
       results.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-          path: node.frontmatter.slug,
-          component: path.resolve("./src/components/postlayout.js")
+          path: `/${node.frontmatter.category}${node.frontmatter.slug}`,
+          component: path.resolve("./src/components/postlayout.js"),
+          context: {
+            slug: node.frontmatter.slug,
+            category: node.frontmatter.category
+          }
         });
       });
     });

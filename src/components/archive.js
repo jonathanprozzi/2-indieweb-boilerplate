@@ -15,7 +15,7 @@ const Archive = ({ children }) => (
                 slug
                 title
                 date(formatString: "MMMM DD, YYYY")
-                categories
+                category
               }
             }
           }
