@@ -13,13 +13,25 @@ const Layout = ({ children }) => (
           siteMetadata {
             title
             description
+            tagline
+            author
+            position
+            organization
+            url
           }
         }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          siteURL={data.site.siteMetadata.url}
+          sitePosition={data.site.siteMetadata.position}
+          siteOrganization={data.site.siteMetadata.organization}
+          siteTagline={data.site.siteMetadata.tagline}
+        />
+        <hr />
         <div
           style={{
             margin: `0 auto`,
@@ -31,6 +43,23 @@ const Layout = ({ children }) => (
           {children}
           <footer>
             © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <div class="rel-me-icons">
+              <a href="https://github.com/jonathanprozzi" rel="me">
+                GitHub
+              </a>
+              <a href="https://twitter.com/jonathanprozzi" rel="me">
+                Twitter
+              </a>
+              <a href="https://micro.blog/username" rel="me">
+                micro.blog
+              </a>
+              <a class="u-email" href="mailto:email@emailaddress.com">
+                Email
+              </a>
+            </div>
+            <span class="footer-tagline">
+              Built with ❤️ in Baltimore &copy 2018
+            </span>
           </footer>
         </div>
       </>

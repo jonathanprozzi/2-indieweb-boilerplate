@@ -10,7 +10,7 @@ module.exports = {
     url: `https://microformats-example.netlify.com/`,
     canonical: `https://microformats-example.netlify.com/`,
     indieauthEndpoint: `https://indieauth.com/auth`,
-    tokenEndpoint: ``,
+    tokenEndpoint: `https://tokens.indieauth.com/token`,
     microsub: ``,
     micropub: ``,
     feedPath: `/posts/`,
