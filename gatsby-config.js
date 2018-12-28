@@ -16,7 +16,7 @@ module.exports = {
     feedPath: `/posts/`,
     pingback: ``,
     // add any social links that you want to include
-    github: ``,
+    github: `https://github.com/microformats-testing`,
     twitter: ``,
     microBlog: ``,
     email: ``,
