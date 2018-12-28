@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "./layout";
 
@@ -13,8 +13,8 @@ const postlayout = props => {
 export default postlayout;
 
 export const query = graphql`
-  query PostQuery {
-    markdownRemark(frontmatter: { slug: { eq: "/second-post" } }) {
+  query PostQuery($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
       timeToRead
