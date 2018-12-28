@@ -17,8 +17,8 @@ module.exports = {
     pingback: ``,
     // add any social links that you want to include
     github: `https://github.com/microformats-testing`,
-    twitter: ``,
-    microBlog: ``,
+    twitter: `https://twitter.com/MicroformatsT`,
+    microBlog: `https://micro.blog/MicroformatsTesting`,
     email: ``,
   },
   plugins: [

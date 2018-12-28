@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Footer = ({ siteGithub, siteTwitter, siteMicroblog, siteEmail }) => (
+const Footer = ({ siteGithub, siteTwitter, siteMicroblog }) => (
   <footer>
     <div class="rel-me-icons">
       <ul>
@@ -12,18 +12,13 @@ const Footer = ({ siteGithub, siteTwitter, siteMicroblog, siteEmail }) => (
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/jonathanprozzi" rel="me">
+          <a href={siteTwitter} rel="me">
             Twitter
           </a>
         </li>
         <li>
-          <a href="https://micro.blog/username" rel="me">
+          <a href={siteMicroblog} rel="me">
             micro.blog
-          </a>
-        </li>
-        <li>
-          <a class="u-email" href="mailto:email@emailaddress.com">
-            Email
           </a>
         </li>
       </ul>
