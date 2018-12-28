@@ -7,7 +7,7 @@ const Footer = ({ siteGithub, siteTwitter, siteMicroblog, siteEmail }) => (
     <div class="rel-me-icons">
       <ul>
         <li>
-          <a href="https://github.com/jonathanprozzi" rel="me">
+          <a href={siteGithub} rel="me">
             GitHub
           </a>
         </li>
