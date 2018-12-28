@@ -12,6 +12,11 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            description
+            tagline
+            author
+            position
+            organizaiton
           }
         }
       }
