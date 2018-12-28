@@ -60,7 +60,13 @@ function SEO({ description, lang, meta, keywords, title }) {
                   : []
               )
               .concat(meta)}
-          />
+          >
+            <link rel="canonical" href={data.site.siteMetadata.canonical} />
+            <link
+              rel="authorization_endpoint"
+              href={data.site.siteMetadata.indieauthEndpoint}
+            />
+          </Helmet>
         );
       }}
     />
