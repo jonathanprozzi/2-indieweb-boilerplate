@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-
 import Header from "./header";
+import Footer from "./footer";
 import "./layout.css";
 
 const Layout = ({ children }) => (
@@ -18,6 +18,10 @@ const Layout = ({ children }) => (
             position
             organization
             url
+            github
+            twitter
+            microBlog
+            email
           }
         }
       }
@@ -41,26 +45,12 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer>
-            © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
-            <div class="rel-me-icons">
-              <a href="https://github.com/jonathanprozzi" rel="me">
-                GitHub
-              </a>
-              <a href="https://twitter.com/jonathanprozzi" rel="me">
-                Twitter
-              </a>
-              <a href="https://micro.blog/username" rel="me">
-                micro.blog
-              </a>
-              <a class="u-email" href="mailto:email@emailaddress.com">
-                Email
-              </a>
-            </div>
-            <span class="footer-tagline">
-              Built with ❤️ in Baltimore &copy 2018
-            </span>
-          </footer>
+          <Footer 
+          siteGithub={data.site.siteMetadata.github}
+          siteTwitter={data.site.siteMetadata.twitter}
+          siteMicroblog={data.site.siteMetadata.microblog}
+          siteEmail={data.site.siteMetadata.email}
+          />
         </div>
       </>
     )}

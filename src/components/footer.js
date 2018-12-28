@@ -2,24 +2,36 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Footer = () => (
+const Footer = ({ siteGithub, siteTwitter, siteMicroblog, siteEmail }) => (
   <footer>
-    © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
     <div class="rel-me-icons">
-      <a href="https://github.com/jonathanprozzi" rel="me">
-        GitHub
-      </a>
-      <a href="https://twitter.com/jonathanprozzi" rel="me">
-        Twitter
-      </a>
-      <a href="https://micro.blog/username" rel="me">
-        micro.blog
-      </a>
-      <a class="u-email" href="mailto:email@emailaddress.com">
-        Email
-      </a>
+      <ul>
+        <li>
+          <a href="https://github.com/jonathanprozzi" rel="me">
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/jonathanprozzi" rel="me">
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a href="https://micro.blog/username" rel="me">
+            micro.blog
+          </a>
+        </li>
+        <li>
+          <a class="u-email" href="mailto:email@emailaddress.com">
+            Email
+          </a>
+        </li>
+      </ul>
     </div>
-    <span class="footer-tagline">Built with ❤️ in Baltimore &copy 2018</span>
+    <span class="footer-tagline">
+      Built with ❤️ 🦄 in Baltimore with{" "}
+      <a href="https://www.gatsbyjs.org">Gatsby</a> © 2018
+    </span>
   </footer>
 );
 

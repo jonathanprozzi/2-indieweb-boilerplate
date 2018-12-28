@@ -14,7 +14,12 @@ module.exports = {
     microsub: ``,
     micropub: ``,
     feedPath: `/posts/`,
-    pingback: ``
+    pingback: ``,
+    // add any social links that you want to include
+    github: ``,
+    twitter: ``,
+    microBlog: ``,
+    email: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
