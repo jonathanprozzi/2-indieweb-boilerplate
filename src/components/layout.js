@@ -48,8 +48,7 @@ const Layout = ({ children }) => (
           <Footer 
           siteGithub={data.site.siteMetadata.github}
           siteTwitter={data.site.siteMetadata.twitter}
-          siteMicroblog={data.site.siteMetadata.microblog}
-          siteEmail={data.site.siteMetadata.email}
+          siteMicroblog={data.site.siteMetadata.microBlog}
           />
         </div>
       </>
