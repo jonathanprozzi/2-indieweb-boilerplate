@@ -19,7 +19,7 @@ module.exports = {
     github: `https://github.com/microformats-testing`,
     twitter: `https://twitter.com/MicroformatsT`,
     microBlog: `https://micro.blog/MicroformatsTesting`,
-    email: ``,
+    email: ``
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,6 +29,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`
       }
     },
     `gatsby-transformer-sharp`,
