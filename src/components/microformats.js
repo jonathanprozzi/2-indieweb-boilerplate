@@ -7,7 +7,7 @@ import { StaticQuery, graphql } from "gatsby";
 function Microformats({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
-      query={detailsQuery}
+      query={microformatsDetailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
@@ -69,28 +69,38 @@ function Microformats({ description, lang, meta, keywords, title }) {
 }
 
 Microformats.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: []
+  url: ``,
+  indieauthEndpoint: ``,
+  tokenEndpoint: ``,
+  microsub: ``,
+  micropub: ``,
+  feedPath: `/posts/`,
+  pingback: ``
 };
 
 Microformats.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
+  url: PropTypes.string,
+  indieauthEndpoint: PropTypes.string,
+  tokenEndpoint: PropTypes.string,
+  microsub: PropTypes.string,
+  micropub: PropTypes.string,
+  feedPath: PropTypes.string,
+  pingback: PropTypes.string
 };
 
 export default Microformats;
 
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
+const microformatsDetailsQuery = graphql`
+  query MicroformatsQuery {
     site {
       siteMetadata {
-        title
-        description
-        author
+        url
+        indieauthEndpoint
+        tokenEndpoint
+        microsub
+        micropub
+        feedPath
+        pingback
       }
     }
   }
