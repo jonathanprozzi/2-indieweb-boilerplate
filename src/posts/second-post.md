@@ -3,6 +3,7 @@ slug: "/second-post"
 title: "Second Sample Markdown Post"
 date: "2018-12-28"
 category: "Learning"
+categories: ["Reflection", "Asdf"]
 ---
 
 # Hammock Raw Denim Wayfarers
