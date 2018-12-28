@@ -1,12 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql, Link } from "gatsby";
+import React, { Component } from "react";
+import { graphql } from "gatsby";
 import Layout from "./layout";
 
-const PostLayout = ({ props }) => (
-  <Layout>
-    <h1>Post Layout Test</h1>
-  </Layout>
-);
+const postlayout = props => {
+  const { markdownRemark } = props.data;
+  return (
+    <Layout>
+      <h1>{markdownRemark.frontmatter.title}</h1>
+    </Layout>
+  );
+};
+export default postlayout;
 
-export default PostLayout;
+export const query = graphql`
+  query PostQuery {
+    markdownRemark(frontmatter: { slug: { eq: "/second-post" } }) {
+      html
+      excerpt
+      timeToRead
+      frontmatter {
+        title
+        date
+      }
+    }
+  }
+`;
