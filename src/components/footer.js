@@ -18,7 +18,7 @@ const Footer = ({ siteGithub, siteTwitter, siteMicroblog }) => (
         </li>
         <li>
           <a href={siteMicroblog} rel="me">
-            micro.blog
+            Micro.blog
           </a>
         </li>
       </ul>
