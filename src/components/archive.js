@@ -26,7 +26,7 @@ const Archive = () => (
     render={({ allMarkdownRemark }) => (
       <>
         <aside>
-          <h2>Post Listing:</h2>
+          <h2>Archived Posts:</h2>
           <ul>
             {allMarkdownRemark.edges.map(edge => (
               <li key={edge.node.frontmatter.slug}>
