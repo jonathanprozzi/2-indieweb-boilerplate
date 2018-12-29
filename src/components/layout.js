@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import Header from "./header";
+import Archive from "./archive";
 import Footer from "./footer";
 import "./layout.css";
 
@@ -45,10 +46,12 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <Footer 
-          siteGithub={data.site.siteMetadata.github}
-          siteTwitter={data.site.siteMetadata.twitter}
-          siteMicroblog={data.site.siteMetadata.microBlog}
+          <Archive />
+          <hr />
+          <Footer
+            siteGithub={data.site.siteMetadata.github}
+            siteTwitter={data.site.siteMetadata.twitter}
+            siteMicroblog={data.site.siteMetadata.microBlog}
           />
         </div>
       </>

@@ -1,30 +1,37 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
-const Archive = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query AllPostsQuery {
-        allMarkdownRemark {
-          edges {
-            node {
-              excerpt
-              timeToRead
-              frontmatter {
-                slug
-                title
-                date(formatString: "MMMM DD, YYYY")
-                categories
-              }
-            }
+const POST_ARCHIVE_QUERY = graphql`
+  query BlogPostsArchive {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }
-    `}
-    render={data => (
+    }
+  }
+`;
+
+const Archive = () => (
+  <StaticQuery
+    query={POST_ARCHIVE_QUERY}
+    render={({ allMarkdownRemark }) => (
       <>
-        <aside />
+        <aside>
+          <h2>Post Listing:</h2>
+          <ul>
+            {allMarkdownRemark.edges.map(edge => (
+              <li key={edge.node.frontmatter.slug}>
+                {edge.node.frontmatter.title}
+              </li>
+            ))}
+          </ul>
+        </aside>
       </>
     )}
   />
