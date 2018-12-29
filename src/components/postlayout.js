@@ -17,7 +17,7 @@ const PostLayout = props => {
           𐄁{" "}
           <Link
             class="u-url"
-            to={`${SiteMeta.siteMetaData.url}/posts${
+            to={`${SiteMeta.siteMetadata.url}/posts${
               PostItems.frontmatter.slug
             }`}
           >
