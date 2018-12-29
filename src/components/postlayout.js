@@ -15,8 +15,13 @@ const PostLayout = props => {
             {SiteMeta.siteMetadata.author}
           </Link>{" "}
           𐄁{" "}
-          <Link class="u-url" to={`/posts${PostItems.frontmatter.slug}`}>
-            <time class="dt-published" datetime="MMMM DD, YYYY">
+          <Link
+            class="u-url"
+            to={`${SiteMeta.siteMetaData.url}/posts${
+              PostItems.frontmatter.slug
+            }`}
+          >
+            <time class="dt-published" datetime={PostItems.frontmatter.date}>
               {PostItems.frontmatter.date}
             </time>
           </Link>
@@ -41,7 +46,7 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
-        date
+        date(formatString: "YYYY-MM-DD ssss")
         slug
       }
     }
