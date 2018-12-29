@@ -29,13 +29,17 @@ const PostListing = () => (
       <div>
         <h2>Recent Posts:</h2>
         {allMarkdownRemark.edges.map(edge => (
-          <>
+          <article>
             <Link to={`/posts/${edge.node.frontmatter.slug}`}>
               <h3>{edge.node.frontmatter.title}</h3>
             </Link>
-            <span>{edge.node.timeToRead} Minute Read</span>
+            <p>
+              Published on: <date>{edge.node.frontmatter.date}</date> 𐄁{" "}
+              {edge.node.timeToRead} Minute Read
+            </p>
             <p>{edge.node.excerpt}</p>
-          </>
+            <Link to={`/posts/${edge.node.frontmatter.slug}`}>Read More</Link>
+          </article>
         ))}
       </div>
     )}
