@@ -48,7 +48,6 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <Archive />
           <hr />
           <Footer
             siteGithub={data.site.siteMetadata.github}

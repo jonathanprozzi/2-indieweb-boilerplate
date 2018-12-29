@@ -27,7 +27,16 @@ const PostListing = () => (
     query={POST_LISTING_QUERY}
     render={({ allMarkdownRemark }) => (
       <div>
-        <h1>HI</h1>
+        <h2>Recent Posts:</h2>
+        {allMarkdownRemark.edges.map(edge => (
+          <>
+            <Link to={`/posts/${edge.node.frontmatter.slug}`}>
+              <h3>{edge.node.frontmatter.title}</h3>
+            </Link>
+            <span>{edge.node.timeToRead} Minute Read</span>
+            <p>{edge.node.excerpt}</p>
+          </>
+        ))}
       </div>
     )}
   />
