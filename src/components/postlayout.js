@@ -13,7 +13,10 @@ const PostLayout = props => {
           <Link to={SiteAuthor.siteMetadata.url}>
             {SiteAuthor.siteMetadata.author}
           </Link>{" "}
-          𐄁 <time class="dt-published" datetime={PostItems.frontmatter.date} />
+          𐄁{" "}
+          <time class="dt-published" datetime="MMMM DD, YYYY">
+            {PostItems.frontmatter.date}
+          </time>
         </p>
         <div
           class="e-content"
