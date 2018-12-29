@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "./layout";
 
 const postlayout = props => {
@@ -8,7 +8,13 @@ const postlayout = props => {
     <Layout>
       <article class="h-entry">
         <h1 class="p-name">{PostItems.frontmatter.title}</h1>
-        <h2 class="p-author h-card">{SiteAuthor.siteMetadata.author}</h2>
+        <p class="p-author h-card">
+          Published by{" "}
+          <Link to={SiteAuthor.siteMetadata.url}>
+            {SiteAuthor.siteMetadata.author}
+          </Link>{" "}
+          𐄁 <date class="dt-published"> {PostItems.frontmatter.date}</date>
+        </p>
         <div
           class="e-content"
           dangerouslySetInnerHTML={{
@@ -29,13 +35,14 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
-        date
+        date(formatString: "MMMM DD, YYYY")
       }
     }
 
     SiteAuthor: site {
       siteMetadata {
         author
+        url
       }
     }
   }
