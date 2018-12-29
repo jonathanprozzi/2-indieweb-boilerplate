@@ -6,27 +6,29 @@ import Archive from "./archive";
 import Footer from "./footer";
 import "./layout.css";
 
+const SITE_META_QUERY = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        tagline
+        author
+        position
+        organization
+        url
+        github
+        twitter
+        microBlog
+        email
+      }
+    }
+  }
+`;
+
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            description
-            tagline
-            author
-            position
-            organization
-            url
-            github
-            twitter
-            microBlog
-            email
-          }
-        }
-      }
-    `}
+    query={SITE_META_QUERY}
     render={data => (
       <>
         <Header
