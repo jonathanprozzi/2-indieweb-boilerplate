@@ -3,20 +3,23 @@ import { graphql, Link } from "gatsby";
 import Layout from "./layout";
 
 const PostLayout = props => {
-  const { PostItems, SiteAuthor } = props.data;
+  const { PostItems, SiteMeta } = props.data;
+
   return (
     <Layout>
       <article class="h-entry">
         <h1 class="p-name">{PostItems.frontmatter.title}</h1>
         <p class="p-author h-card">
           Published by{" "}
-          <Link to={SiteAuthor.siteMetadata.url}>
-            {SiteAuthor.siteMetadata.author}
+          <Link to={SiteMeta.siteMetadata.url}>
+            {SiteMeta.siteMetadata.author}
           </Link>{" "}
           𐄁{" "}
-          <time class="dt-published" datetime="MMMM DD, YYYY">
-            {PostItems.frontmatter.date}
-          </time>
+          <Link to={`/posts${PostItems.frontmatter.slug}`}>
+            <time class="dt-published" datetime="MMMM DD, YYYY">
+              {PostItems.frontmatter.date}
+            </time>
+          </Link>
         </p>
         <div
           class="e-content"
@@ -39,10 +42,11 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        slug
       }
     }
 
-    SiteAuthor: site {
+    SiteMeta: site {
       siteMetadata {
         author
         url
