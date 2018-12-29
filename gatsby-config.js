@@ -4,7 +4,7 @@ module.exports = {
     title: `Jonathan Prozzi`,
     description: `Jonathan Prozzi is a learner, teacher, technologist, musician, and design enthusiast. I'm passionate about empowering others through technology and creativity.`,
     tagline: `Learner. Technologist. Musician. Educator.`,
-    author: `@jonathanprozzi`,
+    author: `Jonathan Prozzi`,
     position: `Director of Learning Design`,
     organization: `Digital Harbor Foundation`,
     url: `https://microformats-example.netlify.com/`,

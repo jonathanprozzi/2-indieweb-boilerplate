@@ -3,14 +3,16 @@ import { graphql } from "gatsby";
 import Layout from "./layout";
 
 const postlayout = props => {
-  const { markdownRemark } = props.data;
+  const { PostItems, SiteAuthor } = props.data;
   return (
     <Layout>
-      <h1>{markdownRemark.frontmatter.title}</h1>
-      <article>
+      <article class="h-entry">
+        <h1 class="p-name">{PostItems.frontmatter.title}</h1>
+        <h2 class="p-author h-card">{SiteAuthor.siteMetadata.author}</h2>
         <div
+          class="e-content"
           dangerouslySetInnerHTML={{
-            __html: markdownRemark.html
+            __html: PostItems.html
           }}
         />
       </article>
@@ -21,13 +23,19 @@ export default postlayout;
 
 export const query = graphql`
   query PostQuery($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    PostItems: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
       timeToRead
       frontmatter {
         title
         date
+      }
+    }
+
+    SiteAuthor: site {
+      siteMetadata {
+        author
       }
     }
   }

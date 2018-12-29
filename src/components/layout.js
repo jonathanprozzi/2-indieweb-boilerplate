@@ -39,22 +39,24 @@ const Layout = ({ children }) => (
           siteTagline={data.site.siteMetadata.tagline}
         />
         <hr />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0
-          }}
-        >
-          {children}
-          <hr />
-          <Footer
-            siteGithub={data.site.siteMetadata.github}
-            siteTwitter={data.site.siteMetadata.twitter}
-            siteMicroblog={data.site.siteMetadata.microBlog}
-          />
-        </div>
+        <main>
+          <div
+            style={{
+              margin: `0 auto`,
+              maxWidth: 960,
+              padding: `0px 1.0875rem 1.45rem`,
+              paddingTop: 0
+            }}
+          >
+            {children}
+            <hr />
+            <Footer
+              siteGithub={data.site.siteMetadata.github}
+              siteTwitter={data.site.siteMetadata.twitter}
+              siteMicroblog={data.site.siteMetadata.microBlog}
+            />
+          </div>
+        </main>
       </>
     )}
   />
