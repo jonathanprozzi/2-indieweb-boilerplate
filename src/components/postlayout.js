@@ -26,6 +26,9 @@ const PostLayout = props => {
             </time>
           </Link>
         </p>
+        <a href="https://microformats-example.netlify.com" class="u-url">
+          Test u-url
+        </a>
         <p>
           Categories:{" "}
           {PostItems.frontmatter.categories.map((category, i) => (
