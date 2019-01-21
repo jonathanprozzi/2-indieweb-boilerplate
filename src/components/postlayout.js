@@ -27,7 +27,7 @@ const PostLayout = props => {
           </Link>
         </p>
         <p>
-          Categories:
+          Categories:{" "}
           {PostItems.frontmatter.categories.map((category, i) => (
             <React.Fragment>
               <Link class="p-category" to={`/${category.toLowerCase()}`}>
