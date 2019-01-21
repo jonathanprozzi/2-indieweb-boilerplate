@@ -28,8 +28,15 @@ const PostLayout = props => {
         </p>
         <p>
           Categories:
-          {PostItems.frontmatter.categories.map(category => (
-            <Link to={`/${category.toLowerCase()}`}>{category}</Link>
+          {PostItems.frontmatter.categories.map((category, i) => (
+            <React.Fragment>
+              <Link class="p-category" to={`/${category.toLowerCase()}`}>
+                {category}
+              </Link>
+              {PostItems.frontmatter.categories.length !== i + 1 && (
+                <span>, </span>
+              )}
+            </React.Fragment>
           ))}
         </p>
         <div
