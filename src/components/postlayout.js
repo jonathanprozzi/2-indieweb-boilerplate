@@ -26,6 +26,12 @@ const PostLayout = props => {
             </time>
           </Link>
         </p>
+        <p>
+          Categories:
+          {PostItems.frontmatter.categories.map(category => (
+            <Link to={`/${category.toLowerCase()}`}>{category}</Link>
+          ))}
+        </p>
         <div
           class="e-content"
           dangerouslySetInnerHTML={{
@@ -48,6 +54,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY-MM-DD ssss")
         slug
+        categories
       }
     }
 

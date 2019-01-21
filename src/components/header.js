@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import profile from "../images/jonathan-profile.jpg"
+import profile from "../images/jonathan-profile.jpg";
 
 const Header = ({ siteTitle, siteTagline, sitePosition, siteOrganization }) => (
   <div
@@ -18,9 +18,17 @@ const Header = ({ siteTitle, siteTagline, sitePosition, siteOrganization }) => (
         padding: `1.45rem 1.0875rem`
       }}
     >
-        <h1 class="site--title" style={{ margin: 0 }}>
-        <div style={{ maxWidth: `100px`, maxHeight: `100px`, width: `100px`, height:`100px`, marginBottom: `1.45rem` }}>
-          <img class="u-photo" src={profile}/>
+      <h1 class="site--title" style={{ margin: 0 }}>
+        <div
+          style={{
+            maxWidth: `100px`,
+            maxHeight: `100px`,
+            width: `100px`,
+            height: `100px`,
+            marginBottom: `1.45rem`
+          }}
+        >
+          <img class="u-photo" src={profile} />
         </div>
         <Link
           to="/"
