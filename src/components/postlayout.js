@@ -10,11 +10,7 @@ const PostLayout = props => {
       <article class="h-entry">
         <h1 class="p-name">{PostItems.frontmatter.title}</h1>
         <p class="p-author h-card">
-          Published by{" "}
-          <Link to={SiteMeta.siteMetadata.url}>
-            {SiteMeta.siteMetadata.author}
-          </Link>{" "}
-          𐄁{" "}
+          Published by <Link to="/">{SiteMeta.siteMetadata.author}</Link> 𐄁{" "}
           <Link
             class="u-url"
             to={`${SiteMeta.siteMetadata.url}/posts${
